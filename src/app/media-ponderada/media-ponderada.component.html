@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Media Ponderada</h1>
+            <div class="mb-3">
+                <label for="notaAc1" class="form-label">Nota AC1</label>
+                <input type="number" class="form-control" id="notaAc1" name="notaAc1" [(ngModel)]="notaAc1">
+            </div>
+            <div class="mb-3">
+                <label for="notaAc2" class="form-label">Nota AC2</label>
+                <input type="number" class="form-control" id="notaAc2" name="notaAc2" [(ngModel)]="notaAc2">
+            </div>
+            <div class="mb-3">
+                <label for="notaAg" class="form-label">Nota AG</label>
+                <input type="number" class="form-control" id="notaAg" name="notaAg" [(ngModel)]="notaAg">
+            </div>
+            <div class="mb-3">
+                <label for="notaAf" class="form-label">Nota AF</label>
+                <input type="number" class="form-control" id="notaAf" name="notaAf" [(ngModel)]="notaAf">
+            </div>
+            <button class="btn btn-primary" (click)="calcularMediaPonderada()">Calcular</button>
+            <div class="mb-3">
+                <label for="mediaPonderada" class="form-label">Média</label>
+                <input disabled='true' type="number" class="form-control" id="mediaPonderada" name="mediaPonderada" [(ngModel)]="mediaPonderada">
+            </div>
+            <!-- EXEMPLO UTILIZANDO NGIF-->
+            <div *ngIf="mediaPonderada >= 6" class="alert alert-success" role="alert">
+                Você está APROVADO!
+            </div>
+            <div *ngIf="mediaPonderada < 6" class="alert alert-danger" role="alert">
+                Você está REPROVADO!
+            </div>
+        </div>
+    </div>
+</div>
